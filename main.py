@@ -1,7 +1,7 @@
 '''
     An easy fork to pytesseract
     From https://github.com/madmaze/pytesseract/blob/95457153ca232eb854a6e80da17090f2fdb3c708/src/pytesseract.py
-    By Wzl 06/25/17
+    By thekingofcity 06/25/17
 '''
 
 from PIL import ImageGrab
