@@ -4,6 +4,7 @@
     By thekingofcity 06/25/17
 '''
 
+from gtts import gTTS
 from PIL import ImageGrab
 import subprocess
 
@@ -18,8 +19,9 @@ def main():
     if status:
         print('Something wrong.')
         return
-    read("out1.txt")
-    read("out2.txt")
+    # read("out1.txt")
+    # read("out2.txt")
+    tts("out1.txt", "out2.txt", "out.mp3")
 
 
 def snip():
@@ -44,6 +46,19 @@ def read(output_filename):
         print(f.read().decode('utf-8').strip())
     finally:
         f.close()
+
+
+def tts(input_filename1="out1.txt", input_filename2="out2.txt", output_filename="out.mp3"):
+    str = "卖 "
+    f = open(input_filename1)
+    str += f.readline()
+    # print(line, end='')
+    f.close()
+    f = open(input_filename2)
+    str += "买 " + f.readline()
+    f.close()
+    tts = gTTS(text=str, lang='zh-cn', slow=False)
+    tts.save(output_filename)
 
 
 main()
