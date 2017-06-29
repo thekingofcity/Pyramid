@@ -1,0 +1,24 @@
+<!doctype html>
+<title>Hello from Flask</title>
+<body>
+<script type="text/javascript" src="jquery-3.2.1.slim.min.js"></script>
+<script>
+    var cd = 30;
+function reload(){
+    location.reload();
+}
+function countdown(){
+    cd--;
+    $('#countdown').text(cd);
+}
+var t1 = window.setTimeout(reload,30000);
+var t2 = window.setInterval(countdown,1000);
+</script>
+<nobr>离下次刷新还有</nobr>
+<nobr id="countdown"></nobr>
+<nobr>秒</nobr>
+<p></p>
+<audio src="out.mp3" controls="controls" autoplay="autoplay">
+Your browser does not support the audio tag.
+</audio>
+</body>
