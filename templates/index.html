@@ -1,0 +1,34 @@
+<!doctype html>
+<title>Hello from Flask</title>
+<!--<script type=text/javascript>
+  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>-->
+<script type=text/javascript src="{{url_for('static', filename='jquery-3.2.1.min.js') }}"></script>
+<script type=text/javascript src="{{url_for('static', filename='main.js') }}"></script>
+<body onload="onload()">
+
+<nobr>离下次刷新还有</nobr>
+<nobr id="countdown"></nobr>
+<nobr>秒</nobr>
+<p></p>
+<audio src="{{url_for('static', filename='out.mp3') }}" controls="controls" id="audio">
+Your browser does not support the audio tag.
+</audio>
+<form>
+  <input name='isTTS' type='radio' id='isTTS_chk'>语音输出
+  <input name='isTTS' type='radio' id='notTTS_chk'>到达指定值报警
+</form>
+<form>
+    <input name='buy' type="radio" id="buyhigh_chk">当买高于
+    <input type="text" id="buyhigh" value="">
+    <input name='buy' type="radio" id="buylow_chk">当买低于
+    <input type="text" id="buylow" value="">
+    <p></p>
+    <input name='sell' type="radio" id="sellhigh_chk">当卖高于
+    <input type="text" id="sellhigh" value="">
+    <input name='sell' type="radio" id="selllow_chk">当卖低于
+    <input type="text" id="selllow" value="">
+</form>
+<input id="submit" type="button" value="确定" onclick = "post()" />
+<p id='received'></p>
+</body>

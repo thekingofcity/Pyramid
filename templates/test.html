@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<title>Hello from Flask</title>
+<script type=text/javascript src="{{url_for('static', filename='jquery-3.2.1.min.js') }}"></script>
+<script type=text/javascript>
+function post(){
+    jsonisTTS = { "isTTS": true };
+    $.getJSON('isTTS', jsonisTTS);
+}
+</script>
+<body>
+    <input type="button" onclick="post()" name="button">button</input>
+</body>
+</html>

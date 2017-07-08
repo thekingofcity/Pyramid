@@ -1,4 +1,4 @@
-#!c:\users\16348\documents\python\pyramid\scripts\python.exe
+#!c:\users\zl\documents\python\pyramid\scripts\python.exe
 #
 # The Python Imaging Library
 # $Id$
